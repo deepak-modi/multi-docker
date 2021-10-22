@@ -16,7 +16,7 @@ after_success:
   - docker build -t deepakmodi/multi-worker ./worker
   #log in to docker CLI
 
-  - echo "DOCKER_PASSWORD" | docker login -u "DOCKER_ID" -- password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" -- password-stdin
    #take those images and push them them to docker hub
   - docker push deepakmodi/multi-client
   - docker push deepakmodi/multi-nginx
